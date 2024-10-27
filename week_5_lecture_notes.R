@@ -45,5 +45,15 @@ all(surveys$record_id %>% tail$record_id)
 all(tail$record_id %in% surveys$record_id)
 
 surveys_left <- left_join(x = surveys, y = tail)
-
 surveys_full <- full_join(surveys, tail)
+
+?cross_join
+
+#Insert pivots/joins code
+
+surveys_mz %>% 
+  pivot_wider(id_cols = 'genus', 
+              names_from = 'plot_id',
+              values_from = 'mean_weight')
+
+

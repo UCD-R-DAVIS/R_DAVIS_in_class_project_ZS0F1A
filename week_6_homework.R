@@ -40,6 +40,3 @@ ggplot(data= gg_sub, aes(x = country, y = mean_life, color = country)) +
   ggtitle("Life Expectancy of Five Countries") + 
   theme(plot.title = element_text(hjust = 0.5)) +
   xlab("Country") + ylab("Life Expectancy")
-
-
-

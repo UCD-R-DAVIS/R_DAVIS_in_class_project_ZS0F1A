@@ -10,6 +10,9 @@ mloa_new = mloa %>%
   mutate(datetime = ymd_hm(paste0(year,"-", month, "-", day," ", hour24, ":", min), tz = "UTC")) %>%
   mutate(datetimeLocal = with_tz(datetime, tz = "Pacific/Honolulu"))
 
+#Alternative
+mloa_new = mloa %>%
+  filter(windSpeed_m_s > 0 & temp_C_2m > 0 & rel_humid > 0)
 
 mloa_new %>%
   mutate(localMon = month(datetimeLocal, label = TRUE),localHour = hour(datetimeLocal)) %>%
